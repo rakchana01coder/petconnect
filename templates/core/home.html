@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}PetConnect — Find Your New Best Friend{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container hero-content">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <div class="hero-badge">
+                    <span class="dot"></span>
+                    AI-powered matching is live
+                </div>
+
+                <h1>
+                    Find your new
+                    <span class="gradient-text">best friend</span>
+                    today.
+                </h1>
+
+                <p class="hero-lead">
+                    PetConnect uses AI to match you with the perfect pet.
+                    Adopt, rehome, or reunite lost pets — all in one modern platform
+                    trusted by thousands of families and shelters.
+                </p>
+
+                <form class="search-bar" action="/pets/" method="get">
+                    <div class="d-flex align-items-center flex-grow-1 px-3">
+                        <i class="fas fa-search text-muted"></i>
+                        <input type="text" name="q" class="form-control ms-2"
+                               placeholder="Search by breed, city, or name…"
+                               aria-label="Search pets">
+                    </div>
+                    <div class="divider"></div>
+                    <select name="category" class="form-select" aria-label="Pet type">
+                        <option value="">All pets</option>
+                        <option value="dogs">Dogs</option>
+                        <option value="cats">Cats</option>
+                        <option value="birds">Birds</option>
+                        <option value="rabbits">Rabbits</option>
+                        <option value="fish">Fish</option>
+                    </select>
+                    <button type="submit" class="btn btn-gradient">
+                        <i class="fas fa-search me-1"></i> Search
+                    </button>
+                </form>
+
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <div class="stat-number">12,400+</div>
+                        <div class="stat-label">Pets rehomed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">340</div>
+                        <div class="stat-label">Partner shelters</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Happy matches</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-5 d-none d-lg-block">
+                <div class="text-center" style="font-size: 18rem; line-height: 1; filter: drop-shadow(0 20px 40px rgba(99,102,241,0.25));">
+                    🐕
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURES -->
+<section class="py-5 my-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Everything you need, in one place</h2>
+            <p class="section-subtitle">
+                From adoption to rescue — PetConnect connects pets with loving homes and helps communities rally together.
+            </p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3" data-reveal>
+                <div class="feature-card">
+                    <div class="feature-icon icon-adopt"><i class="fas fa-heart"></i></div>
+                    <h5>Adopt a pet</h5>
+                    <p>Browse thousands of pets near you and apply with a verified adoption process.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3" data-reveal>
+                <div class="feature-card">
+                    <div class="feature-icon icon-rehome"><i class="fas fa-home"></i></div>
+                    <h5>Rehome ethically</h5>
+                    <p>Give your pet a new loving family with our guided, ethical rehoming flow.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3" data-reveal>
+                <div class="feature-card">
+                    <div class="feature-icon icon-lost"><i class="fas fa-search-location"></i></div>
+                    <h5>Lost &amp; Found</h5>
+                    <p>Report lost pets and get AI-powered match alerts when a lookalike is found.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3" data-reveal>
+                <div class="feature-card">
+                    <div class="feature-icon icon-volunteer"><i class="fas fa-hands-helping"></i></div>
+                    <h5>Volunteer</h5>
+                    <p>Help shelters, foster pets, or transport animals in need in your community.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURED PETS -->
+<section class="py-5" style="background: var(--pc-bg-alt);">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-end mb-4 flex-wrap gap-2">
+            <div>
+                <h2 class="section-title mb-1">Featured pets</h2>
+                <p class="text-muted mb-0">Hand-picked friends looking for their forever home.</p>
+            </div>
+            <a href="/pets/" class="btn btn-outline-primary">
+                Browse all <i class="fas fa-arrow-right ms-1"></i>
+            </a>
+        </div>
+
+        <div class="row g-4">
+            {% for i in "1234" %}
+            <div class="col-sm-6 col-lg-3" data-reveal>
+                <div class="pet-card">
+                    <div class="pet-card-img">
+                        <span class="pet-badge badge-new">New</span>
+                        🐶
+                    </div>
+                    <div class="pet-card-body">
+                        <div class="pet-card-title">
+                            Buddy <i class="far fa-heart text-muted"></i>
+                        </div>
+                        <div class="pet-card-meta">
+                            <i class="fas fa-dog"></i> Golden Retriever · 2y
+                        </div>
+                        <p class="pet-card-desc">
+                            Friendly, playful, and great with kids. Loves long walks.
+                        </p>
+                        <a href="/pets/" class="btn btn-gradient w-100">Meet Buddy</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <p class="text-center text-muted mt-4 small">
+            <i class="fas fa-info-circle me-1"></i>
+            Placeholder cards — real pet listings arrive in the next step.
+        </p>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="py-5">
+    <div class="container">
+        <div class="cta-section" data-reveal>
+            <h2>Ready to change a life?</h2>
+            <p>Whether you're adopting, rehoming, or just want to help — you're in the right place.</p>
+            <div class="d-flex gap-3 justify-content-center flex-wrap">
+                <a href="/accounts/register/" class="btn btn-cta">
+                    <i class="fas fa-paw me-2"></i> Get started free
+                </a>
+                <a href="/pets/" class="btn btn-outline-light rounded-pill px-4">
+                    Browse pets
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
